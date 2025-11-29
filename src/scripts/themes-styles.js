@@ -11,7 +11,13 @@ const arg = args.slice(2)?.[0]
 if (!fs.existsSync(envPath)) {
     throw new Error(`❌ file .env.path tidak tersedia : ${envPath}`)
 }
-require('dotenv').config({ path: envPath })
+require('dotenv').config({
+    path: envPath,
+    debug: false,
+    encoding: 'utf8',
+    quiet: true,
+    override: true,
+})
 
 // console.log([arg].join("\n"));
 if (typeof arg !== 'string') {
@@ -25,5 +31,6 @@ switch (arg) {
         ThemeImport.build();
         break;
     default:
+        console.log(`✅ tidak ada perintah untuk di jalankan`)
         break;
 }
