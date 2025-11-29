@@ -20,5 +20,8 @@
     },
     "scripts": {
         "dev": "nodemon dev.js"
+    },
+    "dependencies": {
+        "dotenv": "^17.2.3"
     }
 }
