@@ -6,14 +6,6 @@ const { Paths } = require('../config/paths');
 const BASEPATH = Paths.ASSETS;
 
 const PATHS = {
-    // DIST: {
-    //     CSS: path.join(BASEPATH, 'dist', 'css'),
-    //     JS: path.join(BASEPATH, 'dist', 'js')
-    // },
-    // BUILDS: {
-    //     CSS: path.join(BASEPATH, 'builds', 'css'),
-    //     JS: path.join(BASEPATH, 'builds', 'js')
-    // },
     OUTS: {
         DIST: {
             CSS: path.join(Paths.BASEPATH, 'dist', 'css'),
@@ -72,7 +64,7 @@ const watch = {
 }
 
 module.exports.ThemesStyleSass = {
-    basepath: BASEPATH,
+    basepath: Paths.BASEPATH,
     sass: sass,
     builds: {
         concat_css: {
