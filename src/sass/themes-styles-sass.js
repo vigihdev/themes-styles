@@ -6,13 +6,23 @@ const { Paths } = require('../config/paths');
 const BASEPATH = Paths.ASSETS;
 
 const PATHS = {
-    DIST: {
-        CSS: path.join(BASEPATH, 'dist', 'css'),
-        JS: path.join(BASEPATH, 'dist', 'js')
-    },
-    BUILDS: {
-        CSS: path.join(BASEPATH, 'builds', 'css'),
-        JS: path.join(BASEPATH, 'builds', 'js')
+    // DIST: {
+    //     CSS: path.join(BASEPATH, 'dist', 'css'),
+    //     JS: path.join(BASEPATH, 'dist', 'js')
+    // },
+    // BUILDS: {
+    //     CSS: path.join(BASEPATH, 'builds', 'css'),
+    //     JS: path.join(BASEPATH, 'builds', 'js')
+    // },
+    OUTS: {
+        DIST: {
+            CSS: path.join(Paths.BASEPATH, 'dist', 'css'),
+            JS: path.join(Paths.BASEPATH, 'dist', 'js')
+        },
+        BUILDS: {
+            CSS: path.join(Paths.BASEPATH, 'builds', 'css'),
+            JS: path.join(Paths.BASEPATH, 'builds', 'js')
+        },
     },
     LIBRARIES: {
         FONT: path.join(BASEPATH, 'font'),
@@ -34,13 +44,13 @@ const sass = {
             style: 'expanded'
         },
         files: {
-            [`${PATHS.DIST.CSS}/font.css`]: `${PATHS.LIBRARIES.FONT}/src/scss/font.scss`,
-            [`${PATHS.DIST.CSS}/animate.css`]: `${PATHS.LIBRARIES.ANIMATE}/src/scss/animate.scss`,
-            [`${PATHS.DIST.CSS}/elevation.css`]: `${PATHS.LIBRARIES.ELEVATION}/src/scss/elevation.scss`,
-            [`${PATHS.DIST.CSS}/utilities.css`]: `${PATHS.LIBRARIES.UTILITIES}/src/scss/utilities.scss`,
-            [`${PATHS.DIST.CSS}/typography.css`]: `${PATHS.LIBRARIES.TYPOGRAPHY}/src/scss/typography.scss`,
-            [`${PATHS.DIST.CSS}/material-icons.css`]: `${PATHS.LIBRARIES.MATERIAL_ICONS}/src/scss/material-icons.scss`,
-            [`${PATHS.DIST.CSS}/gutters.css`]: `${PATHS.LIBRARIES.GUTTERS}/src/scss/gutters.scss`
+            [`${PATHS.OUTS.DIST.CSS}/font.css`]: `${PATHS.LIBRARIES.FONT}/src/scss/font.scss`,
+            [`${PATHS.OUTS.DIST.CSS}/animate.css`]: `${PATHS.LIBRARIES.ANIMATE}/src/scss/animate.scss`,
+            [`${PATHS.OUTS.DIST.CSS}/elevation.css`]: `${PATHS.LIBRARIES.ELEVATION}/src/scss/elevation.scss`,
+            [`${PATHS.OUTS.DIST.CSS}/utilities.css`]: `${PATHS.LIBRARIES.UTILITIES}/src/scss/utilities.scss`,
+            [`${PATHS.OUTS.DIST.CSS}/typography.css`]: `${PATHS.LIBRARIES.TYPOGRAPHY}/src/scss/typography.scss`,
+            [`${PATHS.OUTS.DIST.CSS}/material-icons.css`]: `${PATHS.LIBRARIES.MATERIAL_ICONS}/src/scss/material-icons.scss`,
+            [`${PATHS.OUTS.DIST.CSS}/gutters.css`]: `${PATHS.LIBRARIES.GUTTERS}/src/scss/gutters.scss`
         }
     }
 };
@@ -68,7 +78,7 @@ module.exports.ThemesStyleSass = {
         concat_css: {
             main: {
                 files: {
-                    [`${PATHS.BUILDS.CSS}/themes-styles.css`]: buildsConfig.css
+                    [`${PATHS.OUTS.BUILDS.CSS}/themes-styles.css`]: buildsConfig.css
                 },
             }
         },
